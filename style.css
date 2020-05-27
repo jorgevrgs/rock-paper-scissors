@@ -5,39 +5,34 @@
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
 }
 
 :root {
-  --icon-size: 180px;
+  --icon-size: 120px;
 }
 
 .match {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  align-content: center;
+  grid-template-columns: repeat(2, auto);
 }
 
-.player, .computer {
-  /* width: calc(var(--icon-size)*3); */
+/* .player, .computer {
+  width: cal(var(--icon-size)*3);
   height: var(--icon-size);
   display: flex;
-}
+} */
 
 .icons {
   width: var(--icon-size);
   height: var(--icon-size);
   margin: 20px;
-  border: 10px solid #888;
+  padding: 10px;
+  display: block;
+  border: 5px solid transparent;
   border-radius: 50%;
-  padding: 20px;
-}
-
-.icons:hover {
-  cursor: pointer;
-  border-color: transparent;
 }
 
 .element {
@@ -45,6 +40,16 @@ body {
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.icons:hover {
+  cursor: pointer;
+  border-color: lightgrey;
+}
+
+.icons::has(div.selected) {
+  border-color: green;
 }
 
 .rock {
