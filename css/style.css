@@ -8,6 +8,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   width: 100vw;
   height: 100vh;
+  background-color: lightblue;
 }
 
 h1 {
@@ -19,25 +20,11 @@ h1 {
 }
 
 .match {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
   align-content: center;
-  flex-direction: row;
-}
-
-.player, .computer, .separator {
-  min-width: var(--icon-size);
-  min-height: var(--icon-size);
-}
-
-i {
-  font-size: 5rem;
-}
-
-.icons > i:hover {
-  cursor: pointer;
-  color: brown;
+  grid-template-columns: repeat(3, auto);
 }
 
 .icons, .avatar {
@@ -47,9 +34,34 @@ i {
   padding: 10px;
   display: block;
   background: transparent;
-  border: 5px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player, .computer, .separator {
+  min-width: var(--icon-size);
+  min-height: var(--icon-size);
+}
+
+i {
+  font-size: 4rem;
+  padding: 10px;
+}
+
+.player {
+  border: 1px dashed grey;
   border-radius: 50%;
-  position: relative;
+  background-color: white;
+}
+
+.player > i {
+  color: lightblue;
+}
+
+.player > i:hover {
+  cursor: pointer;
+  color: black;
 }
 
 .separator {
@@ -60,4 +72,20 @@ i {
   justify-content: center;
   align-items: center;
   align-content: center;
+}
+
+@font-face {
+  font-family: 'Digital-7';
+  src: url('../fonts/digital-7.ttf');
+}
+
+.scoreboard {
+  border: 1px dashed black;
+}
+
+.scoreboard > i {
+  font-family: 'Digital-7';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 6rem;
 }
