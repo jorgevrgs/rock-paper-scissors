@@ -63,7 +63,7 @@ function handleClick(e) {
   if (player == 5) {
     document.getElementById('message').innerHTML = 'You Win!';
   } else if (computer == 5) {
-    document.getElementById('message').innerHTML = 'Computer Win!';
+    document.getElementById('message').innerHTML = 'Computer Wins!';
   }
 
 }
