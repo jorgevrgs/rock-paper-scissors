@@ -1,0 +1,63 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+}
+
+:root {
+  --icon-size: 100px;
+}
+
+.match {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+}
+
+.player, .computer, .separator {
+  min-width: var(--icon-size);
+  min-height: var(--icon-size);
+}
+
+i {
+  font-size: 5rem;
+}
+
+.icons > i:hover {
+  cursor: pointer;
+  color: brown;
+}
+
+.icons, .avatar {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin: 20px;
+  padding: 10px;
+  display: block;
+  background: transparent;
+  border: 5px solid transparent;
+  border-radius: 50%;
+  position: relative;
+}
+
+.separator {
+  background-repeat: no-repeat;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}

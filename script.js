@@ -1,9 +1,9 @@
+const matchPlayer = document.getElementById('match-player');
+const matchComputer = document.getElementById('match-computer');
+const matchResult = document.getElementById('match-result');
+
 function playRound(playerSelection, computerSelection) {
-  console.log({
-    playerSelection,
-    computerSelection
-  });
-  if (playerSelection === computerSelection) { return 'draw'; }
+  if (playerSelection === computerSelection) { return 'equals'; }
 
   const combinations = {
     paper: 'rock',
@@ -13,10 +13,10 @@ function playRound(playerSelection, computerSelection) {
 
   if (typeof combinations[playerSelection] !== 'undefined'
   && combinations[playerSelection] === computerSelection) {
-    return 'player';
+    return 'greater-than';
   } else if (typeof combinations[computerSelection] !== 'undefined'
   && combinations[computerSelection] === playerSelection) {
-    return 'computer';
+    return 'less-than';
   }
 }
 
@@ -26,14 +26,25 @@ function computerPlay() {
   return items[Math.floor(Math.random() * items.length)];
 }
 
+function cleanMatch() {
+  matchPlayer.className = 'separator';
+  matchComputer.className = 'separator';
+  matchResult.className = 'separator';
+}
+
 function handleClick(e) {
-  console.log('clicked', e);
   const selected = e.target;
-  selected.classList.add('selected');
+  cleanMatch();
 
   const computerSelection = computerPlay();
-  const playerSelection = selected.dataset.player;
-  console.log(playRound(playerSelection, computerSelection));
+  const playerSelection = selected.dataset.value;
+  const playResult = playRound(playerSelection, computerSelection);
+
+  // Match result
+  matchPlayer.innerHTML = `<i class="far fa-hand-${playerSelection}"></i>`;
+  matchResult.innerHTML = `<i class="fas fa-${playResult}"></i>`;
+  matchComputer.innerHTML = `<i class="far fa-hand-${computerSelection}"></i>`;
+
 }
 
 const playerAll = document.querySelectorAll('[data-player]');
