@@ -1,0 +1,60 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+:root {
+  --icon-size: 180px;
+}
+
+.match {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.player, .computer {
+  /* width: calc(var(--icon-size)*3); */
+  height: var(--icon-size);
+  display: flex;
+}
+
+.icons {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin: 20px;
+  border: 10px solid #888;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.icons:hover {
+  cursor: pointer;
+  border-color: transparent;
+}
+
+.element {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.rock {
+  background-image: url('static/hand-rock-regular.svg');
+}
+
+.paper {
+  background-image: url('static/hand-paper-regular.svg');
+}
+
+.scissors {
+  background-image: url('static/hand-scissors-regular.svg');
+}
