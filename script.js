@@ -1,6 +1,7 @@
 const matchPlayer = document.getElementById('match-player');
 const matchComputer = document.getElementById('match-computer');
 const matchResult = document.getElementById('match-result');
+const winnerDisplay = document.getElementById('winner');
 
 const scorePlayer = document.getElementById('score-player');
 const scoreComputer = document.getElementById('score-computer');
@@ -54,6 +55,16 @@ function handleClick(e) {
 
   scorePlayer.innerHTML = `<i>${player}</i>`
   scoreComputer.innerHTML = `<i>${computer}</i>`
+
+  if (player == 5 || computer == 5) {
+    winnerDisplay.classList.add('show-winner');
+  }
+
+  if (player == 5) {
+    document.getElementById('message').innerHTML = 'You Win!';
+  } else if (computer == 5) {
+    document.getElementById('message').innerHTML = 'Computer Win!';
+  }
 
 }
 

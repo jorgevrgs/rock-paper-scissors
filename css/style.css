@@ -89,3 +89,38 @@ i {
   font-weight: 400;
   font-size: 6rem;
 }
+
+#winner {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.show-winner {
+  display: flex !important;
+}
+
+#winner > div {
+  color: white;
+  font-size: xx-large;
+}
+
+#winner > button {
+  font-size: xx-large;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+  min-width: 150px;
+}
+
+#winner > button > i {
+  font-size: 1em;
+}
