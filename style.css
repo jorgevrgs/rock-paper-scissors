@@ -5,6 +5,11 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
 }
 
 :root {
@@ -12,18 +17,16 @@ body {
 }
 
 .match {
-  display: grid;
+  display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
-  grid-template-columns: repeat(2, auto);
+  flex-direction: row;
 }
 
-/* .player, .computer {
-  width: cal(var(--icon-size)*3);
-  height: var(--icon-size);
-  display: flex;
-} */
+.player, .computer, .separator {
+  min-width: var(--icon-size);
+}
 
 .icons {
   width: var(--icon-size);
