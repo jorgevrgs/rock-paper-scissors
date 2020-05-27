@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
     <script src="script.js" defer></script>
     <title>Document</title>
   </head>
@@ -11,19 +12,21 @@
     <h1>Paper, rock and scissors</h1>
     <div class="match">
       <div class="player">
-        <div class="icons"><span class="player-avatar"></span></div>
-        <div class="icons"><span class="element rock" data-player="rock"></span></div>
-        <div class="icons"><span class="element paper" data-player="paper"></span></div>
-        <div class="icons"><span class="element scissors" data-player="scissors"></span></div>
+        <div class="avatar"><i class="fas fa-user-secret"></i></div>
+        <div class="icons" data-player><i data-value="rock" class="far fa-hand-rock"></i></div>
+        <div class="icons" data-player><i data-value="paper" class="far fa-hand-paper"></i></div>
+        <div class="icons" data-player><i data-value="scissors" class="far fa-hand-scissors"></i></div>
       </div>
 
-      <div class="separator"></div>
+      <div class="separator" id="match-player"></div>
+      <div class="separator" id="match-result"></div>
+      <div class="separator" id="match-computer"></div>
 
       <div class="computer">
-        <div class="icons"><span class="computer-avatar"></span></div>
-        <div class="icons" data-computer="rock"><span class="element rock"></span></div>
-        <div class="icons" data-computer="paper"><span class="element paper"></span></div>
-        <div class="icons" data-computer="scissors"><span class="element scissors"></span></div>
+        <div class="avatar"><i class="fas fa-desktop"></i></div>
+        <div class="icons" data-computer="rock"><i data-value="rock" class="far fa-hand-rock"></i></div>
+        <div class="icons" data-computer="paper"><i data-value="rock" class="far fa-hand-rock"></i></div>
+        <div class="icons" data-computer="scissors"><i data-value="rock" class="far fa-hand-rock"></i></div>
       </div>
     </div>
   </body>
