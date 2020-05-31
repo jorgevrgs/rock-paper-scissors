@@ -119,6 +119,7 @@ i {
   border-radius: 5px;
   margin-top: 15px;
   min-width: 150px;
+  color: white;
 }
 
 #winner > button > i {
